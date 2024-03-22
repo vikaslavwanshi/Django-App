@@ -1,0 +1,36 @@
+{% load static %} 
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <title>COMP6006: Assignment-1</title>
+    <style>
+        /* Aligning in center positions */
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .center-heading {
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; 
+        }
+        .navbar a {
+            margin: 0 10px; /* Giving space in between both the list options*/
+        }
+    </style>
+</head>
+<body>
+    <h1 class="center-heading">UNIVERSITY STUDENT HUB</h1>
+    <div class="navbar">
+        <a href="{% url 'home page' %}">Home</a>
+        <a href="{% url 'course_list' %}">List of Courses</a>
+        <a href="{% url 'student_list' %}">List of Students</a>
+    </div>
+    {% block content %} 
+    {% endblock %}
+</body> 
+</html>

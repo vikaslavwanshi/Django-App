@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}List of Courses - COMP6006{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2>List Of Courses</h2>
+    <p>All courses are shown below</p>
+    <table class="table table-bordered"> 
+        <thead>
+            <tr> 
+                <th>Course Name</th>
+            </tr>
+        </thead> 
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td><a href="{% url 'course_detail' course_id=course.id %}">{{ course.courseName }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

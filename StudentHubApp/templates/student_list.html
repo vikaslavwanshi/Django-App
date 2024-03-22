@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Home - COMP6006{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2>List of Students</h2>
+    <p>Details of enrolled Students are shown below</p>
+    <table class="table table-bordered"> 
+        <thead>
+            <tr> 
+                <th>StudentName</th>
+                <th>StudentID</th>
+                <th>DOB</th> 
+                <th>EMAIL</th> 
+            </tr>
+        </thead> 
+        <tbody>
+            {% for x in students %}
+            <tr>
+                <th>{{ x.name }}</th>
+                <th>{{ x.studentId }}</th>
+                <th>{{ x.dob}}</th>
+                <th>{{ x.emailAddress}}</th>
+            </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+{% endblock %}
+</div>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Course Details - COMP6006{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2>Course Detail Page</h2>
+    <table class="table table-bordered"> 
+        <thead>
+            <tr> 
+                <th>Student Capacity</th>
+                <th>Course Name</th>
+                <th>Course Coordinator</th> 
+            </tr>
+        </thead> 
+        <tbody>
+            <tr>
+                <td>{{ course.capacity }}</td>
+                <td>{{ course.courseName }}</td>
+                <td>{{ course.nameOfCourseCordinator }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Students Enrolled</h3>
+    <table class="table table-bordered"> 
+        <thead>
+            <tr> 
+                <th>Student Name</th>
+                <th>Student ID</th>
+                <th>Date of Birth</th>
+                <th>Email Address</th>
+            </tr>
+        </thead> 
+        <tbody>
+            {% for student in students_enrolled %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.studentId }}</td>
+                <td>{{ student.dob }}</td>
+                <td>{{ student.emailAddress }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Total Number of Students Enrolled: {{ total_students_enrolled }}</p>
+</div>
+
+{% endblock %}
